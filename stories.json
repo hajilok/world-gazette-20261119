@@ -1,0 +1,105 @@
+{
+  "edition": "Thursday, November 19, 2026",
+  "masthead": "THE WORLD GAZETTE",
+  "tagline": "ONE IMAGE · ONE DAY · THE WHOLE EARTH",
+  "lead": {
+    "id": "apec",
+    "kicker": "APEC SUMMIT · SHENZHEN",
+    "headline": "Trump, Xi and Putin hold historic trilateral",
+    "deck": "Nuclear arms and the Ukraine war are on the table as the three leaders meet on the APEC sidelines. Xi personally greeted Trump at the airport — a first for a foreign leader — with a fighter-jet flyover.",
+    "bullets": [
+      "Putin and Trump seated beside Xi at Wednesday's welcome banquet",
+      "Kremlin: a meeting, but no full-scale bilateral talks planned",
+      "Trump–Carney trade talks; Japan's Takaichi gets a muted reception"
+    ]
+  },
+  "cards": [
+    {
+      "id": "anthropic",
+      "tag": "MARKETS · US",
+      "headline": "Anthropic's record IPO raises $107.3B",
+      "caption": "Priced at $83 a share, valued up to $1.5tn; stock debut Thursday — the biggest IPO ever, past SpaceX."
+    },
+    {
+      "id": "gta6",
+      "tag": "GAMING · WORLD",
+      "headline": "GTA VI launches after a 13-year wait",
+      "caption": "Rolls out from Asia and NZ to the UK; critics positive, launch-day glitches reported."
+    },
+    {
+      "id": "crimea",
+      "tag": "UKRAINE",
+      "headline": "Crimean Bridge hit again; rail halted",
+      "caption": "Third attack this week on the Russia–Crimea link; traffic suspended, Russian officials say."
+    },
+    {
+      "id": "gaza",
+      "tag": "MIDEAST",
+      "headline": "Israel pushes ground op past Yellow Line",
+      "caption": "Rare Gaza incursion to dismantle a 'terror tunnel'; Hamas calls it a flagrant ceasefire violation."
+    },
+    {
+      "id": "myanmar",
+      "tag": "ASIA · JUSTICE",
+      "headline": "Myanmar faces genocide verdict at UN court",
+      "caption": "Rohingya case: no state has ever been found guilty of genocide by an international court."
+    },
+    {
+      "id": "vangogh",
+      "tag": "ART · US",
+      "headline": "Van Gogh fetches a record $190.4M",
+      "caption": "Châtaigniers en fleurs (1890) sells after a row over its Nazi-era history."
+    },
+    {
+      "id": "fed",
+      "tag": "MACRO · US",
+      "headline": "Fed minutes: almost all see more hikes",
+      "caption": "Hawkish October minutes lift the dollar and yields; gold sinks 3% to a 14-month low."
+    },
+    {
+      "id": "florida",
+      "tag": "CLIMATE · US",
+      "headline": "South Florida floods in torrential rain",
+      "caption": "Neighborhoods underwater; schools, roads, hospitals and airports disrupted."
+    },
+    {
+      "id": "jeffries",
+      "tag": "US · POLITICS",
+      "headline": "Jeffries nominated for House Speaker",
+      "caption": "Democrats' pick puts him on path to be the first Black speaker when they take the House in January."
+    },
+    {
+      "id": "musk",
+      "tag": "US · TECH",
+      "headline": "Musk: midterm spend 'pretty foolish'",
+      "caption": "The billionaire says he is 'not Maga', distancing himself from the movement linked to Trump."
+    },
+    {
+      "id": "palantir",
+      "tag": "ESPIONAGE",
+      "headline": "Russian arrested spying on Palantir",
+      "caption": "Followed the US defence firm's employees; fake US IDs and two Russian passports found."
+    },
+    {
+      "id": "bangladesh",
+      "tag": "SOUTH ASIA",
+      "headline": "Bangladesh violence; Yunus home burned",
+      "caption": "Arson and blasts in Dhaka ahead of Sheikh Hasina's planned December return from India."
+    }
+  ],
+  "ticker": [
+    "Waymo pulls all driverless cars from US freeways",
+    "Nvidia hunts a Huang successor; Kress stays interim",
+    "Pew: Islam set to be the largest religion by 2035",
+    "GLP-1 drugs cut UK grocery spending by £1B",
+    "Apple iCloud outage hits users",
+    "Peltola wins the Alaska Senate race",
+    "Kate ends India tour at a Mumbai maternity ward",
+    "Fiona the hippo swallows a hat in Cincinnati",
+    "Carney eyes China for Canada's auto sector",
+    "NYC warns of a data-centre power gap",
+    "Machado questions the $100B Venezuela oil deal",
+    "Parents jailed for a 1987 cold-case killing in France"
+  ],
+  "footer": "Compiled from Reuters, AP and BBC wire reports of 19 November 2026 · every picture drawn by code"
+}
