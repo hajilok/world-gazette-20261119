@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
@@ -33,7 +34,12 @@ if (width < 1 || height < 1 || width > 1024 || height > 1024) {
 if (buf.toString("ascii", buf.length - 8, buf.length - 4) !== "IEND") {
   throw new Error("entry.png: no IEND trailer");
 }
+// The IEND chunk is always 0 bytes long and its CRC over the type name is fixed.
+if (buf.readUInt32BE(buf.length - 12) !== 0 || buf.readUInt32BE(buf.length - 4) !== 0xae426082) {
+  throw new Error("entry.png: malformed IEND chunk");
+}
 
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "entry.png"), buf);
-console.log(`The World Gazette · ${width}x${height} · ${buf.length} bytes -> ${join(outDir, "entry.png")}`);
+const sha = createHash("sha256").update(buf).digest("hex");
+console.log(`The World Gazette · ${width}x${height} · ${buf.length} bytes · sha256 ${sha} -> ${join(outDir, "entry.png")}`);
