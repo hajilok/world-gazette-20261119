@@ -133,6 +133,27 @@ def icon(draw, name, x, y, s=28):
         R(11, 19, 15, 26, fill=PAPER)
         draw.polygon(P((19, 2), (23, 8), (21, 8), (24, 13), (17, 9), (19, 9), (16, 5)), fill=RED)
         draw.polygon(P((20, 5), (22, 9), (19, 9)), fill=AMBER)
+    elif name == "nvidia":
+        R(6, 6, 22, 22, fill=INK); R(10, 10, 18, 18, fill=TEAL)
+        for t in (9, 14, 19):
+            L([(t, 2), (t, 6)], INK, 1.8); L([(t, 22), (t, 26)], INK, 1.8)
+            L([(2, t), (6, t)], INK, 1.8); L([(22, t), (26, t)], INK, 1.8)
+    elif name == "waymo":
+        R(3, 10, 25, 20, fill=TEAL); draw.polygon(P((6, 10), (9, 4), (19, 4), (22, 10)), fill=TEAL)
+        R(10, 5, 18, 9, fill=SKY_TOP)
+        E(5, 18, 11, 24, fill=INK); E(17, 18, 23, 24, fill=INK)
+        E(12, 1, 16, 5, fill=AMBER)
+    elif name == "pew":
+        E(3, 3, 25, 25, outline=BLUE, width=max(1, int(2 * u)))
+        draw.arc([x + 8 * u, y + 3 * u, x + 20 * u, y + 25 * u], 270, 90, fill=BLUE, width=max(1, int(1.6 * u)))
+        L([(3, 14), (25, 14)], BLUE, 1.6)
+        star(draw, x + 14 * u, y + 14 * u, 4 * u, AMBER)
+    elif name == "glp1":
+        draw.pieslice([x + 2 * u, y + 8 * u, x + 16 * u, y + 22 * u], 90, 270, fill=TEAL)
+        draw.pieslice([x + 12 * u, y + 8 * u, x + 26 * u, y + 22 * u], 270, 90, fill=AMBER)
+        R(9, 8, 19, 22, fill=TEAL)
+        L([(14, 8), (14, 22)], PAPER, 1.6)
+        L([(20, 24), (26, 24), (23, 27)], RED, 1.8)
     else:
         E(2, 2, 26, 26, outline=INK, width=2)
 
@@ -178,7 +199,9 @@ def lead_art(draw, x, y, w, h):
             draw.rectangle([pole_x, fy, pole_x + fw * 0.45, fy + fh * 0.5], fill=BLUE)
         elif kind == "cn":
             draw.rectangle([pole_x, fy, pole_x + fw, fy + fh], fill=RED)
-            star(draw, pole_x + fw * 0.25, fy + fh * 0.32, fh * 0.22, AMBER)
+            star(draw, pole_x + fw * 0.22, fy + fh * 0.30, fh * 0.20, AMBER)
+            for sx, sy in [(0.42, 0.12), (0.50, 0.24), (0.50, 0.40), (0.42, 0.52)]:
+                star(draw, pole_x + fw * sx, fy + fh * sy, fh * 0.065, AMBER)
         else:
             for s, c in enumerate([WHITE, BLUE, RED]):
                 draw.rectangle([pole_x, fy + fh * s / 3, pole_x + fw, fy + fh * (s + 1) / 3], fill=c)
@@ -250,29 +273,29 @@ def render(data, out):
 
     d.line([(M, 366), (W - M, 366)], fill=INK, width=2)
 
-    # card grid: 3 cols x 4 rows
+    # card grid: 4 cols x 4 rows
     gx, gy = M + 2, 372
     gap = 8
-    cw = (W - 2 * M - 4 - 2 * gap) / 3
+    cw = (W - 2 * M - 4 - 3 * gap) / 4
     ch = 126
-    tagf = font("sans-b", 10.5)
-    headf = font("serif-b", 19)
-    capf = font("sans-r", 12.5)
+    tagf = font("sans-b", 9.5)
+    headf = font("serif-b", 17)
+    capf = font("sans-r", 12)
     for i, card in enumerate(data["cards"]):
-        r_, c_ = divmod(i, 3)
+        r_, c_ = divmod(i, 4)
         x0 = gx + c_ * (cw + gap)
         y0 = gy + r_ * (ch + gap)
         d.rectangle([x0, y0, x0 + cw, y0 + ch], fill=CARD, outline=(180, 172, 150), width=1)
         d.rectangle([x0, y0, x0 + 4, y0 + ch], fill=[RED, TEAL, AMBER, BLUE][i % 4])
-        icon(d, card["id"], x0 + 12, y0 + 7, 24)
-        d.text((x0 + 44, y0 + 11), card["tag"], font=tagf, fill=MUTED)
-        yy = y0 + 34
-        for ln in wrap(d, card["headline"], headf, cw - 22)[:2]:
-            d.text((x0 + 12, yy), ln, font=headf, fill=INK)
-            yy += 21
+        icon(d, card["id"], x0 + 11, y0 + 7, 22)
+        d.text((x0 + 39, y0 + 11), card["tag"], font=tagf, fill=MUTED)
+        yy = y0 + 32
+        for ln in wrap(d, card["headline"], headf, cw - 20)[:2]:
+            d.text((x0 + 11, yy), ln, font=headf, fill=INK)
+            yy += 19
         yy += 2
-        for ln in wrap(d, card["caption"], capf, cw - 22)[:3]:
-            d.text((x0 + 12, yy), ln, font=capf, fill=(60, 58, 52))
+        for ln in wrap(d, card["caption"], capf, cw - 20)[:3]:
+            d.text((x0 + 11, yy), ln, font=capf, fill=(60, 58, 52))
             yy += 14
 
     # ticker
@@ -281,7 +304,7 @@ def render(data, out):
     lf = font("sans-b", 12)
     d.text((M + 2, ty), "AROUND THE WORLD", font=lf, fill=RED)
     d.line([(M + 130, ty + 6), (W - M, ty + 6)], fill=(180, 172, 150), width=1)
-    tkf = font("sans-r", 12.5)
+    tkf = font("sans-r", 12)
     items = data["ticker"]
     lines, cur = [], ""
     for it in items:
@@ -293,10 +316,10 @@ def render(data, out):
             cur = it
     if cur:
         lines.append(cur)
-    yy = ty + 18
+    yy = ty + 16
     for ln in lines[:5]:
         d.text((M + 2, yy), ln, font=tkf, fill=INK)
-        yy += 15
+        yy += 14
 
     # footer
     ff = font("sans-r", 10.5)

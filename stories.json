@@ -85,13 +85,33 @@
       "tag": "SOUTH ASIA",
       "headline": "Bangladesh violence; Yunus home burned",
       "caption": "Arson and blasts in Dhaka ahead of Sheikh Hasina's planned December return from India."
+    },
+    {
+      "id": "nvidia",
+      "tag": "CHIPS · US",
+      "headline": "Nvidia hunts a Huang successor",
+      "caption": "Kress stays interim CEO after Huang's 12 Nov exit; Arm's Rene Haas eyed amid a China chip scandal."
+    },
+    {
+      "id": "waymo",
+      "tag": "TECH · US",
+      "headline": "Waymo pulls cars from US freeways",
+      "caption": "All driverless cars withdrawn from freeways; robotaxis still run in 15 US cities."
+    },
+    {
+      "id": "pew",
+      "tag": "SOCIETY · WORLD",
+      "headline": "Pew: Islam largest religion by 2035",
+      "caption": "Muslim population projected past 3.6B by 2070; India stays Hindu-majority, its Muslim share growing."
+    },
+    {
+      "id": "glp1",
+      "tag": "HEALTH · UK",
+      "headline": "GLP-1 drugs cut UK grocery spend £1B",
+      "caption": "Households on weight-loss drugs bought 415M fewer food items in a year, Worldpanel data shows."
     }
   ],
   "ticker": [
-    "Waymo pulls all driverless cars from US freeways",
-    "Nvidia hunts a Huang successor; Kress stays interim",
-    "Pew: Islam set to be the largest religion by 2035",
-    "GLP-1 drugs cut UK grocery spending by £1B",
     "Apple iCloud outage hits users",
     "Peltola wins the Alaska Senate race",
     "Kate ends India tour at a Mumbai maternity ward",
@@ -99,7 +119,15 @@
     "Carney eyes China for Canada's auto sector",
     "NYC warns of a data-centre power gap",
     "Machado questions the $100B Venezuela oil deal",
-    "Parents jailed for a 1987 cold-case killing in France"
+    "Parents jailed for a 1987 cold-case killing in France",
+    "Intel cuts more jobs in global restructuring",
+    "Medicare premiums are rising",
+    "Skydance exits the FIFA World Cup US rights race",
+    "US returns to a two-carrier presence in West Asia",
+    "UK seeks a fix to the Scotch whisky tariff row with India",
+    "Alibaba aided a military-linked lab in the Nvidia chip saga",
+    "APEC banquet: Cantonese dishes with Western touches",
+    "Thai PM Anutin speaks Cantonese at APEC, 'very happy'"
   ],
   "footer": "Compiled from Reuters, AP and BBC wire reports of 19 November 2026 · every picture drawn by code"
 }
