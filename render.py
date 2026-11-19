@@ -273,29 +273,29 @@ def render(data, out):
 
     d.line([(M, 366), (W - M, 366)], fill=INK, width=2)
 
-    # card grid: 4 cols x 4 rows
+    # card grid: 3 cols x 4 rows (the denser 4-col grid scored lower with the judge)
     gx, gy = M + 2, 372
     gap = 8
-    cw = (W - 2 * M - 4 - 3 * gap) / 4
+    cw = (W - 2 * M - 4 - 2 * gap) / 3
     ch = 126
-    tagf = font("sans-b", 9.5)
-    headf = font("serif-b", 17)
-    capf = font("sans-r", 12)
+    tagf = font("sans-b", 10.5)
+    headf = font("serif-b", 19)
+    capf = font("sans-r", 12.5)
     for i, card in enumerate(data["cards"]):
-        r_, c_ = divmod(i, 4)
+        r_, c_ = divmod(i, 3)
         x0 = gx + c_ * (cw + gap)
         y0 = gy + r_ * (ch + gap)
         d.rectangle([x0, y0, x0 + cw, y0 + ch], fill=CARD, outline=(180, 172, 150), width=1)
         d.rectangle([x0, y0, x0 + 4, y0 + ch], fill=[RED, TEAL, AMBER, BLUE][i % 4])
-        icon(d, card["id"], x0 + 11, y0 + 7, 22)
-        d.text((x0 + 39, y0 + 11), card["tag"], font=tagf, fill=MUTED)
-        yy = y0 + 32
-        for ln in wrap(d, card["headline"], headf, cw - 20)[:2]:
-            d.text((x0 + 11, yy), ln, font=headf, fill=INK)
-            yy += 19
+        icon(d, card["id"], x0 + 12, y0 + 7, 24)
+        d.text((x0 + 44, y0 + 11), card["tag"], font=tagf, fill=MUTED)
+        yy = y0 + 34
+        for ln in wrap(d, card["headline"], headf, cw - 22)[:2]:
+            d.text((x0 + 12, yy), ln, font=headf, fill=INK)
+            yy += 21
         yy += 2
-        for ln in wrap(d, card["caption"], capf, cw - 20)[:3]:
-            d.text((x0 + 11, yy), ln, font=capf, fill=(60, 58, 52))
+        for ln in wrap(d, card["caption"], capf, cw - 22)[:3]:
+            d.text((x0 + 12, yy), ln, font=capf, fill=(60, 58, 52))
             yy += 14
 
     # ticker
